@@ -1,0 +1,57 @@
+#building a simple perceptron, aka an artificial neuron
+
+question = "Should I go to the outdoor concert today?"
+print question
+
+#a perceptron takes several inputs and combines them 
+#into one output
+
+#We can build a program to crudely, hypothetically answer  the #question above
+
+#Weights are on a scale of 1-10, 
+#1 being unimportant, 10 very important
+
+def weather(question):
+    weather_question = raw_input("Is it nice out? Answer Y or N:")
+    weather_weight = 7
+    if weather_question == "Y":
+        weather_question = 1* weather_weight
+        return weather_question
+    else:
+        raining_question = 0
+
+def are_my_friends_going(question):
+    friends_question = raw_input("Are my friends going? Answer Y or N:")
+    friends_weight = 3  #who needs friends?!
+    if friends_question == "Y":
+        friends_question = 1* friends_weight
+        return friends_question
+    else:
+        friends_question = 0
+        
+def near_public_transit(question):
+    transit_question = raw_input("Is it near public transit? Answer Y or N:")
+    transit_weight = 8  #Maybe I don't own a car
+    if transit_question == "Y":
+        transit_question = 1* transit_weight
+        return transit_question
+    else:
+        friends_question = 0
+        
+
+#So from here, let's say that we will only go to the concert
+#if it's going to be a fun time or not.
+#If we decide that a 5 or better on the scale of 1-10 is worth
+#putting on pants for, then let's decide based on that.
+
+sum_of_inputs = weather(question)+are_my_friends_going(question)+near_public_transit(question)
+
+print "Thinking........."
+print "..................."
+
+if sum_of_inputs/3 >= 5:
+    print "You decided to go to the concert!"
+else:
+    print "You decided to stay home and watch Todd Margaret"
+    
+#in this case you decided to go out--Hooray!    
