@@ -44,7 +44,7 @@ def near_public_transit(question):
 #If we decide that a 5 or better on the scale of 1-10 is worth
 #putting on pants for, then let's decide based on that.
 
-sum_of_inputs = weather(question)+are_my_friends_going(question)+near_public_transit(question)
+perceptron1 = weather(question)+are_my_friends_going(question)+near_public_transit(question)
 
 print "Thinking........."
 print "..................."
@@ -55,3 +55,5 @@ else:
     print "You decided to stay home and watch Todd Margaret"
     
 #in this case you decided to go out--Hooray!    
+
+#now, you can build multiple perceptrons, give each a weight, and combine for better decision making
